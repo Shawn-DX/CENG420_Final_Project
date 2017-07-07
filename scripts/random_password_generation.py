@@ -1,5 +1,6 @@
 from random import Random
 import csv
+import sys
 
 class PasswordGeneration:
     def __init__(self):
@@ -16,7 +17,7 @@ class PasswordGeneration:
         return str
 
 
-    def password_generation(self, length = 100000):
+    def password_generation(self, length = 1000000):
         random = Random()
 
         with open('strong.csv','wb') as csvfiles:
@@ -26,6 +27,7 @@ class PasswordGeneration:
                 csvwriter.writerow([password, 1])
                 if i % 10000 == 0:
                     print '%d line done'% i
+                    # sys.stdout.flush()
         return 1
 
 
