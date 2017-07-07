@@ -24,6 +24,8 @@ class PasswordGeneration:
             for i in range(length):
                 password = self.random_str(random.randint(8,12))
                 csvwriter.writerow([password, 1])
+                if i % 10000 == 0:
+                    print '%d line done'% i
         return 1
 
 
